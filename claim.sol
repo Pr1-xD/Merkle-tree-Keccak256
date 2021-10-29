@@ -83,7 +83,7 @@ contract MerkleProof {
     IERC20 public bln;
     
     function setPurchaseToken(IERC20 token) public  {
-        bln = token;
+        bln = token; //purchase token
     }
     
   function verify(
@@ -114,8 +114,8 @@ contract MerkleProof {
   }
   
 function claim(bytes32 root,bytes32 leaf,bytes32[] memory proof,address account, uint256 amount) public{
-    if(verify(root,leaf,proof)){
-        bln.transferFrom(0x15412D1f9C63e9123Fa62a3E385a130f5C959De5,0x15412D1f9C63e9123Fa62a3E385a130f5C959De5,1);
+    if(verify(root, leaf, proof)){
+        bln.transferFrom(0x15412D1f9C63e9123Fa62a3E385a130f5C959De5,0x15412D1f9C63e9123Fa62a3E385a130f5C959De5,1);  //transfer
     }
 }
 }
